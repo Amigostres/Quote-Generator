@@ -38,6 +38,43 @@ body{
     font-style: italic;
 }
 
+.button-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    cursor: pointer;
+    font-size: 1.3rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background: #333;
+    outline: none; /* we don't want it to have a outline when we clikc on it */
+    padding: 0.5rem 1.8rem;
+    /* this box shadow will make it look like it's being pressed in */
+    box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
+
+
+}
+
+.twitter-button:hover{
+    color: #38a1f3;
+}
+.fa-twitter{
+    font-size: 1.5rem;
+}
+
+button:hover{
+    filter: brightness(120%);
+}
+button:active{
+    /* 0.3 because I want the button to look like it's sinking when pressed */
+    transform: translate(0, 0.3rem);
+    /* box shadow should be removed because it will just move down with it */
+    box-shadow: 0 0rem;
+}
 
 
 /* media query */
