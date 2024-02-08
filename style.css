@@ -20,3 +20,32 @@ body{
     background-color: rgba(225, 225, 225, 0.4);
     box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
+#quoteText{
+    font-size: 2rem;
+}
+#longQuoteText{
+    font-size: 1.68rem;
+}
+
+.fa-quote-left{
+    font-size: 2.3rem;
+}
+
+.quote-author{
+    margin-top: 1.68rem;
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+
+/* media query */
+@media screen and (max-width: 1000px){
+    .quote-container{
+        margin: auto 10px;
+    }
+    .quote-text{
+        font-size: 2.5rem;
+    }
+}
