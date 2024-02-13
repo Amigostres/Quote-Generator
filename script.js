@@ -1,13 +1,12 @@
 const newQuoteBtn = document.getElementById('newQuote');
 const quoteText = document.getElementById('quoteText')
 const author = document.querySelector('.author')
-
+//when page loads it will run the api once
+onload = getQuotes
 newQuoteBtn.addEventListener('click', getQuotes)
-
 function newQuote(quotes){
     //grab a random quote from array
     const newQuote = quotes[Math.floor(Math.random() * quotes.length)]
-    console.log(newQuote);
 
     //text
     quoteText.innerHTML = newQuote.text
