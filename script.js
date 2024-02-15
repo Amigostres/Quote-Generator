@@ -1,5 +1,6 @@
 const quoteContainer = document.getElementById('quote-container')
 const newQuoteBtn = document.getElementById('newQuote')
+const twitterBtn = document.getElementById('twitter')
 const quoteText = document.getElementById('quoteText')
 const author = document.querySelector('.author')
 const loader = document.getElementById('loader')
@@ -23,6 +24,7 @@ function loadingComplete(){
 newQuoteBtn.addEventListener('click', newQuote)
 
 function newQuote(){
+    // loading()
     //grab a random quote from array
     const newQuote = quotes[Math.floor(Math.random() * quotes.length)]
 
@@ -30,11 +32,21 @@ function newQuote(){
     quoteText.innerHTML = newQuote.text
     //author
     author.innerHTML = newQuote.author
+
+    loadingComplete()
 }
 
 //get quotes from api
 async function getQuotes() {
+    loading()
     const response = await fetch("https://jacintodesign.github.io/quotes-api/data/quotes.json");
     quotes = await response.json();
     newQuote()
   }
+
+
+  // Tweet Quote
+  twitterBtn.addEventListener('click' , () => {
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.innerText} - ${author.innerText}`;
+    window.open(twitterUrl, '_blank');
+})
