@@ -9,10 +9,12 @@ getQuotes()
 //stores the api values so that the page does not need to call the api multiple times
 let quotes = [];
 
+//this function will fun first so that it will get the data from the api
 function loading(){
     loader.hidden = false
     quoteContainer.hidden = true
 }
+//this fuction will run second after the api gets recieved
 function loadingComplete(){
     loader.hidden = true
     quoteContainer.hidden = false
